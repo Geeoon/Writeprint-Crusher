@@ -1,6 +1,8 @@
 #include <iostream>
+#include <unistd.h>
 
 int main(int argc, char* argv[]) {
-    std::cout << "Hello world!" << std::endl;
+    // check if being used in pipe
+    
     return 0;
 }
