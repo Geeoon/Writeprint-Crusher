@@ -1,9 +1,11 @@
+#include <iostream>
+#include <fstream>
 #include <random>
 #include "identity.h"
 
 identity::identity() : identity{ "temp" } {}
 
-identity::identity(const char* name) : name{ name } {
+identity::identity(const std::string& name) : name{ name } {
     // could use something like OpenSSL instead...
     std::random_device device;
     std::mt19937_64 rng(device());
@@ -20,10 +22,21 @@ identity::identity(const char* name) : name{ name } {
     commas = distribution_bool(rng);
 }
 
-identity::identity(const char* file_path, bool dummy) {
+identity::identity(const std::string& file_path, bool dummy) {
 
 }
 
 void identity::parse_text(const std::string& src, std::string& dest) {
 
+}
+
+void identity::save_identity(const std::string& file_path) {
+    std::ofstream fs(file_path + name + ".csv");
+    fs << english_type << ","
+        << hyphens << ","
+        << single_space << ","
+        << caps << ","
+        << oxford << ","
+        << apos << ","
+        << commas;
 }

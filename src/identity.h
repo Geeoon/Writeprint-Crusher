@@ -13,14 +13,14 @@ public:
      * Create a completely random named identity
      * @param name the name of the identity to be created
      */
-    identity(const char* name);
+    identity(const std::string& name);
 
     /**
      * Import an identity from a file
      * @param file_path the path of the identity to import
      * @param dummy only to differentiate between construcctors
      */
-    identity(const char* file_path, bool dummy);
+    identity(const std::string& file_path, bool dummy);
 
     /**
      * Parse text with this identity
@@ -28,6 +28,12 @@ public:
      * @param dest destination string to store the text
      */
     void parse_text(const std::string& src, std::string& dest);
+
+    /**
+     * Save identity to a particular path
+     * @param file_path the path where the file should be saved
+     */
+    void save_identity(const std::string& file_path);
 private:
     std::string name;
     int english_type;  // 0: American, 1: Australian, 2: British, 3: Canadian

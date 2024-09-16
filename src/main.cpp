@@ -29,6 +29,7 @@ int main(int argc, char* argv[]) {
         if (strncmp(argv[i], "--create-identity", 17) == 0) {
             // create identity
             ident = std::make_unique<identity>(value);
+            ident->save_identity("./");
         } else if (strncmp(argv[i], "-i", 2) == 0) {
             ident = std::make_unique<identity>(value, false);
         } else if (strncmp(argv[i], "-f", 2) == 0) {
