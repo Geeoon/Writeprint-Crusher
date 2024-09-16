@@ -23,7 +23,22 @@ identity::identity(const std::string& name) : name{ name } {
 }
 
 identity::identity(const std::string& file_path, bool dummy) {
-
+    std::ifstream fs(file_path);
+    fs >> english_type;
+    fs.ignore(1,',');
+    fs >> hyphens;
+    fs.ignore(1,',');
+    fs >> single_space;
+    fs.ignore(1,',');
+    fs >> caps;
+    fs.ignore(1,',');
+    fs >> oxford;
+    fs.ignore(1,',');
+    fs >> apos;
+    fs.ignore(1,',');
+    fs >> commas;
+    fs.ignore(1,',');
+    fs >> name;
 }
 
 void identity::parse_text(const std::string& src, std::string& dest) {
@@ -38,5 +53,6 @@ void identity::save_identity(const std::string& file_path) {
         << caps << ","
         << oxford << ","
         << apos << ","
-        << commas;
+        << commas << ","
+        << name;
 }

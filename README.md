@@ -34,9 +34,10 @@ Or skip the first step and `-i` option to use a random identity: `./crusher -f t
 
 Alternatively, use the program in a pipeline: `cat tes.txt | ./crusher -i identity1.csv > out.txt`
 
-Modifying the configuration files is encouraged.  values are stored as a 1 or 0 in a comma seperated list.
+Modifying the configuration files is encouraged.  Values are stored in a comma seperated list
 
 Values corrospond as follows:
-`[TBD]`
+`english_type,hyphens,single_space,caps,oxford,apos,commas,name`
+
 ### Notes
 Only supported/tested on Linux.

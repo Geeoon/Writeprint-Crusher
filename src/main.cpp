@@ -36,7 +36,7 @@ int main(int argc, char* argv[]) {
             // save to file
             output_file = value;
         } else {
-            std::cerr << "Unknown argument: " << value << std::endl;
+            std::cerr << "Unknown argument: " << argv[i] << std::endl;
             return -1;
         }
     }
