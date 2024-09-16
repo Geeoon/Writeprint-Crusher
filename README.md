@@ -9,12 +9,12 @@ Prevents forensic linguistics.  Allows you to convert between identities (idiole
 * Oxford and no Oxford comma
 * Apostrophe or no apostrophe on words like won't and can't
 * Commas before prepositions (FANBOYS)
-* Periods between acronyms
-* 12 hour and 24 hour
-* mm-dd-yyyy to dd-mm-yyyy
+* Periods between acronyms [TODO]
+* 12 hour and 24 hour [TODO]
+* mm-dd-yyyy to dd-mm-yyyy [TODO]
 
 ## Analyzes Text:
-* Warns of uncommon words or phrases
+* Warns of uncommon words or phrases [TODO]
 
 ## What's This Used For?
 Can be used for maintaining anonynimity when changing identities.
@@ -29,6 +29,8 @@ First, create a named identity: `./crusher --create-identity identity1`
 A new file will be created in the folder the program was called which contains the configuration settings for the identity.
 
 Second, use the identity and specify a file: `./crusher -i identity1.csv -f test.txt`
+
+Or skip the first step and `-i` option to use a random identity: `./crusher -f test.txt`
 
 Alternatively, use the program in a pipeline: `cat tes.txt | ./crusher -i identity1.csv > out.txt`
 
