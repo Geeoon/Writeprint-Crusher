@@ -2,7 +2,7 @@
 Prevents forensic linguistics.  Allows you to convert between identities (idiolects)
 
 ## Supports Switching Between:
-* American-English, British-English, Australian-English, and Candian-English
+* American-English, British-English, Australian-English, and Canadian-English
 * Hyphenated and non-hyphenated compound words
 * Single spaces and double spaces after a period
 * Capitalized and non-capitalized beginning of sentences
