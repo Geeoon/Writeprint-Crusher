@@ -37,7 +37,7 @@ public:
 private:
     void create_random_identity();
     std::string name;
-    int english_type;  // 0: American, 1: Australian, 2: British, 3: Canadian
+    int english_type;  // 0: American, 1: British, 2: Australian (not supported), 3: Canadian (not supported)
     bool hyphens, single_space, caps, oxford, apos, commas;
 };
 

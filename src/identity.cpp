@@ -57,7 +57,7 @@ void identity::save_identity(const std::string& file_path) {
 void identity::create_random_identity() {
     std::random_device device;
     std::mt19937_64 rng(device());
-    std::uniform_int_distribution<std::mt19937_64::result_type> distribution_language(0, 3);
+    std::uniform_int_distribution<std::mt19937_64::result_type> distribution_language(0, 1);
     std::uniform_int_distribution<std::mt19937_64::result_type> distribution_bool(0, 1);
 
     english_type = distribution_language(rng);

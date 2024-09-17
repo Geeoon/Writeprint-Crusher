@@ -2,7 +2,7 @@
 Prevents forensic linguistics.  Allows you to convert between identities (idiolects)
 
 ## Supports Switching Between:
-* American-English, British-English, Australian-English, and Canadian-English
+* American-English and British-English
 * Hyphenated and non-hyphenated compound words
 * Single spaces and double spaces after a period
 * Capitalized and non-capitalized beginning of sentences
@@ -26,7 +26,7 @@ The program accepts text through a pipeline or through a file.
 
 First, create a named identity: `./crusher --create-identity identity1`
 
-A new file will be created in the folder the program was called which contains the configuration settings for the identity.
+A new file will be created in the folder the program was called which contains the configuration settings for the identity.  Press `Ctrl-C` to exit the program.
 
 Second, use the identity and specify a file: `./crusher -i identity1.csv`
 
