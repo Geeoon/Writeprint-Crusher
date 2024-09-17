@@ -9,11 +9,6 @@ void print_usage(char* name);
 
 int main(int argc, char* argv[]) {
     int is_piped{!isatty(STDIN_FILENO)};
-    if (argc < 2) {
-        std::cerr << "No command line arguments supplied." << std::endl;
-        print_usage(argv[0]);
-        return -1;
-    }
 
     std::unique_ptr<identity> ident;
     // command line argument parsing
