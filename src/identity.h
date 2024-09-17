@@ -24,10 +24,10 @@ public:
 
     /**
      * Parse text with this identity
-     * @param src source string to be parsed
-     * @param dest destination string to store the text
+     * @param src the source stream to be parsed
+     * @param dest the destination stream to store the text
      */
-    void parse_text(const std::string& src, std::string& dest);
+    void parse_text(std::istream& src, std::ostream& dest);
 
     /**
      * Save identity to a particular path
@@ -35,6 +35,7 @@ public:
      */
     void save_identity(const std::string& file_path);
 private:
+    void create_random_identity();
     std::string name;
     int english_type;  // 0: American, 1: Australian, 2: British, 3: Canadian
     bool hyphens, single_space, caps, oxford, apos, commas;

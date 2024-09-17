@@ -28,11 +28,11 @@ First, create a named identity: `./crusher --create-identity identity1`
 
 A new file will be created in the folder the program was called which contains the configuration settings for the identity.
 
-Second, use the identity and specify a file: `./crusher -i identity1.csv -f test.txt`
+Second, use the identity and specify a file: `./crusher -i identity1.csv`
 
-Or skip the first step and `-i` option to use a random identity: `./crusher -f test.txt`
+Or skip the first step and `-i` option to use a random identity: `./crusher`
 
-Alternatively, use the program in a pipeline: `cat tes.txt | ./crusher -i identity1.csv > out.txt`
+Use the program in a pipeline: `cat test.txt | ./crusher -i identity1.csv > out.txt`
 
 Modifying the configuration files is encouraged.  Values are stored in a comma seperated list
 
