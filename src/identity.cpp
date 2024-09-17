@@ -34,22 +34,46 @@ identity::identity(const std::string& file_path, bool dummy) {
 }
 
 void identity::parse_text(std::ostream& dest, std::istream& src) const {
-    std::string token;
+    std::string token, sentence;
+    bool was_last_comma{false};
     while (src >> token) {
         // parse token
-        dest << token;
+        // capitalized beginning of sentences
+        if (sentence.empty() && token.length() > 1 && !all_caps(token)) {
+            if (caps) {
+                sentence += tolower(token[0]);
+                sentence += token.substr(1, token.length());
+            } else {
+                sentence += toupper(token[0]);
+                sentence += token.substr(1, token.length());
+            }
+        } else {
+            sentence += token;
+        }
+
+        if (src.peek() != EOF) {
+            sentence += ' ';
+        }
+        if (token.back() == '.') {
+            if (!single_space) {
+                sentence += ' ';
+            }
+            dest << sentence;
+            sentence.erase();
+        }
     }
+    dest << sentence;
 }
 
 void identity::save_identity(const std::string& file_path) const {
     std::ofstream fs(file_path + name + ".csv");
-    fs << english_type << ","
-        << hyphens << ","
-        << single_space << ","
-        << caps << ","
-        << oxford << ","
-        << apos << ","
-        << commas << ","
+    fs << english_type << ','
+        << hyphens << ','
+        << single_space << ','
+        << caps << ','
+        << oxford << ','
+        << apos << ','
+        << commas << ','
         << name;
 }
 
@@ -68,4 +92,13 @@ void identity::create_random_identity() {
     oxford = distribution_bool(rng);
     apos = distribution_bool(rng);
     commas = distribution_bool(rng);
+}
+
+bool identity::all_caps(const std::string& in) const {
+    for (const auto& character : in) {
+        if (isalpha(character) && islower(character)) {
+            return false;
+        }
+    }
+    return true;
 }

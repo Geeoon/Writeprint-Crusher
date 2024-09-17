@@ -36,6 +36,7 @@ public:
     void save_identity(const std::string& file_path) const;
 private:
     void create_random_identity();
+    bool all_caps(const std::string& in) const;
     std::string name;
     int english_type;  // 0: American, 1: British, 2: Australian (not supported), 3: Canadian (not supported)
     bool hyphens, single_space, caps, oxford, apos, commas;
