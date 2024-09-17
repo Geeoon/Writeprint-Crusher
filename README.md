@@ -4,8 +4,8 @@ Prevents forensic linguistics.  Allows you to convert between identities (idiole
 ## Supports Switching Between:
 * American-English and British-English
 * Hyphenated and non-hyphenated compound words
-* Single spaces and double spaces after a period
-* Capitalized and non-capitalized beginning of sentences
+* Single spaces and double spaces after a period [DONE]
+* Capitalized and non-capitalized beginning of sentences [DONE]
 * Oxford and no Oxford comma
 * Apostrophe or no apostrophe on words like won't and can't
 * Commas before prepositions (FANBOYS)
