@@ -34,7 +34,7 @@ identity::identity(const std::string& file_path, bool dummy) {
     }
 }
 
-void identity::parse_text(std::istream& src, std::ostream& dest) {
+void identity::parse_text(std::ostream& dest, std::istream& src) const {
     std::string token;
     while (src >> token) {
         // parse token
@@ -42,7 +42,7 @@ void identity::parse_text(std::istream& src, std::ostream& dest) {
     }
 }
 
-void identity::save_identity(const std::string& file_path) {
+void identity::save_identity(const std::string& file_path) const {
     std::ofstream fs(file_path + name + ".csv");
     fs << english_type << ","
         << hyphens << ","

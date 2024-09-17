@@ -37,7 +37,7 @@ int main(int argc, char* argv[]) {
         }
     }
     
-    ident->parse_text(std::cin, std::cout);
+    ident->parse_text(std::cout, std::cin);
     return 0;
 }
 

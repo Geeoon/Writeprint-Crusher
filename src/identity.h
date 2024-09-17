@@ -27,13 +27,13 @@ public:
      * @param src the source stream to be parsed
      * @param dest the destination stream to store the text
      */
-    void parse_text(std::istream& src, std::ostream& dest);
+    void parse_text(std::ostream& dest, std::istream& src) const;
 
     /**
      * Save identity to a particular path
      * @param file_path the path where the file should be saved
      */
-    void save_identity(const std::string& file_path);
+    void save_identity(const std::string& file_path) const;
 private:
     void create_random_identity();
     std::string name;
