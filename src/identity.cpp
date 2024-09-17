@@ -6,7 +6,6 @@
 identity::identity() : identity{ "temp" } {}
 
 identity::identity(const std::string& name) : name{ name } {
-    // could use something like OpenSSL instead...
     create_random_identity();
 }
 
@@ -55,6 +54,7 @@ void identity::save_identity(const std::string& file_path) const {
 }
 
 void identity::create_random_identity() {
+    // could use something like OpenSSL instead...
     std::random_device device;
     std::mt19937_64 rng(device());
     std::uniform_int_distribution<std::mt19937_64::result_type> distribution_language(0, 1);
