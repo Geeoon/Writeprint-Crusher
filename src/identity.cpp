@@ -37,25 +37,35 @@ void identity::parse_text(std::ostream& dest, std::istream& src) const {
     std::string token, sentence;
     bool was_last_comma{false};
     while (src >> token) {
+        std::string out_token;
         // parse token
         // capitalized beginning of sentences
         if (sentence.empty() && token.length() > 1 && !all_caps(token)) {
             if (caps) {
-                sentence += tolower(token[0]);
-                sentence += token.substr(1, token.length());
+                out_token += tolower(token[0]);
+                out_token += token.substr(1, token.length());
             } else {
-                sentence += toupper(token[0]);
-                sentence += token.substr(1, token.length());
+                out_token += toupper(token[0]);
+                out_token += token.substr(1, token.length());
             }
         } else {
-            sentence += token;
+            out_token = token;
         }
 
+        
+
         if (src.peek() != EOF) {
-            sentence += ' ';
+            // end of word, add space
+            out_token += ' ';
         }
+
+        // done with processing token, add to sentence
+        sentence += out_token;
+
+        // end of sentence
         if (token.back() == '.') {
             if (!single_space) {
+                // adding double space
                 sentence += ' ';
             }
             dest << sentence;
